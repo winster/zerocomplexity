@@ -1,4 +1,4 @@
-package net.ifao.companion.ccbd.metrics;
+package com.example;
 
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
