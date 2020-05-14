@@ -1,10 +1,7 @@
 package com.example;
 
-import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
 import java.util.*;
 
-@Slf4j
 public class StatisticsBuilder {
 
     private int milliSeconds[] = new int[1000];     // Every millisecond value
@@ -73,7 +70,6 @@ public class StatisticsBuilder {
         return result;
     }
 
-    @ToString
     class Statistics {
         int lastSecond;
         int lastMinute;
@@ -104,7 +100,8 @@ public class StatisticsBuilder {
         };
         TimerTask task2 = new TimerTask() {
             public void run() {
-                log.info("Statistics {}", statisticsBuilder.getStatistics());
+                Statistics statistics = statisticsBuilder.getStatistics();
+                System.out.println("Last minute count "+statistics.lastMinute);
             }
         };
         Timer timer = new Timer("Timer");
